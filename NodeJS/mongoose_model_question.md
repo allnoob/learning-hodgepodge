@@ -3,7 +3,7 @@
 > When no collection argument is passed, Mongoose produces a collection name by passing the model name to the utils.toCollectionName method. This method pluralizes the name. If you don't like this behavior, either pass a collection name or set your schemas collection name option.
 
 
-没有传入第三个参数时（collection），就会使用第一个参数产生collectionName,并转换成复数形式，所以要显示指定第三个参数
+没有传入第三个参数时（collection），就会使用第一个参数产生collectionName,并转换成复数形式，所以要显示指定第三个参数
 ```js
 // ...
 
