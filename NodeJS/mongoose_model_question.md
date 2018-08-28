@@ -1,4 +1,4 @@
-### Mongoose创建对象要注意的几个点
+# Mongoose创建对象要注意的几个点
 1. 今天在公司折腾node.js的时候，发现了一个问题，就是我写好模型后进行查询，但是怎么查都查不出来任何东西，一直是空 ```[]```。后来也是找了很久的问题，最终在网上查相关资料才发现：
 > When no collection argument is passed, Mongoose produces a collection name by passing the model name to the utils.toCollectionName method. This method pluralizes the name. If you don't like this behavior, either pass a collection name or set your schemas collection name option.
 
