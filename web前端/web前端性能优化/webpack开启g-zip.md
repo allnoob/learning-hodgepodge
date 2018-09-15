@@ -11,7 +11,7 @@ const express = require('express')
 const app = express()
 app.use(compression({ threshold: 9 }))
 ```
-nginx实现
+### nginx实现
 ```nginx
 //conf文件里
   server {
