@@ -1,8 +1,9 @@
 # g-zip加速
-> 前端项目过大一直是让我头疼的问题，最近使用了g-zip加速，感觉效果还不错。本文参考自[segmentfault](https://segmentfault.com/a/1190000013239622)
-> 打包时，可以将```config/index.js```文件的```productionGzip```设置为```true```
->主要是webpack里[compression-webpack-plugin](https://webpack.docschina.org/plugins/compression-webpack-plugin/)模块的实现。如果没有此模块需要进行安装。需要注意版本，1.X版本和2.X版本的参数不同，如果出现报错可能是参数的问题。
->使用node服务器需要安装[compression](https://github.com/expressjs/compression)模块
+> 本文参考自[segmentfault](https://segmentfault.com/a/1190000013239622)<br><br>
+> 前端项目过大一直是让我头疼的问题，最近使用了g-zip加速，感觉效果还不错。
+> 打包时，可以将```config/index.js```文件的```productionGzip```设置为```true```<br>
+> 主要是webpack里[compression-webpack-plugin](https://webpack.docschina.org/plugins/compression-webpack-plugin/)模块的实现。如果没有此模块需要进行安装。需要注意版本，1.X版本和2.X版本的参数不同，如果出现报错可能是参数的问题。<br>
+> 使用node服务器需要安装[compression](https://github.com/expressjs/compression)模块
 ### espress实现
 ```js
 const compression = require('compression')
