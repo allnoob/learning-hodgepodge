@@ -2,8 +2,8 @@
 > 公司大佬让我把一个项目的工具类封装起来，然后发布到npm上，鉴于之前没有做过类似的事情，所以查询资料并记录下怎么去完成这件事。
 
 ### 步骤
-1. 去Github创建公共的项目，并命名为myTools，记下该项目的地址，以便第2步需要用到（具体步骤不作说明）
-2. 首先当然要在本地建一个自己项目的文件夹，然后进入项目文件夹执行命令初始化项目（新建```package.json```）
+1. 去Github创建公共的项目，并命名为myTools，记下该项目的地址，以便第2步需要用到（具体步骤不作说明）
+2. 首先当然要在本地建一个自己项目的文件夹，然后进入项目文件夹执行命令初始化项目（新建```package.json```）
 ```
 npm init
 ```
@@ -24,7 +24,7 @@ version: (1.0.0) 项目版本
 description: 项目说明
 entry point: (index.js) 项目主入口
 test command: 
-git repository: git仓库链接（第一步的项目地址填入到这）
+git repository: git仓库链接（第一步的项目地址填入到这）
 keywords: 项目关键字
 author: 作者
 license: (ISC)
@@ -60,10 +60,10 @@ module.exports = {}
 ```
 npm pack
 ```
-打完后会发现你的项目主文件夹下出现了一个叫myTools-version.tgz的文件
+打完后会发现你的项目主文件夹下出现了一个叫myTools-version.tgz的文件
 6. 然后把当前本地的整个项目推送至github仓库上
-7. 去[npm](!https://www.npmjs.com/)网站进行用户注册，记住，邮箱一定要验证！不然后面会出现发布不成功的现象，报403这种错误
-8. 用户注册都准备好后，回到项目文件夹里的命令行窗口，添加npm用户到项目环境中
+7. 去[npm](!https://www.npmjs.com/)网站进行用户注册，记住，邮箱一定要验证！不然后面会出现发布不成功的现象，报403这种错误
+8. 用户注册都准备好后，回到项目文件夹里的命令行窗口，添加npm用户到项目环境中
 ```
 npm adduser
 ```
@@ -78,7 +78,7 @@ Logged in as username on https://registry.npmjs.org/.
 ```
 npm publish
 ```
-如果没有验证邮箱会出现403的情况，推送失败，当然403错误的情况还有可能出现了同名问题，这时候只需要进```package.json```修改一个名字即可，像我这边myTools出现了同名的问题就会这样
+如果没有验证邮箱会出现403的情况，推送失败，当然403错误的情况还有可能出现了同名问题，这时候只需要进```package.json```修改一个名字即可，像我这边myTools出现了同名的问题就会这样
 ```
 npm ERR! publish Failed PUT 403
 npm ERR! code E403
@@ -91,9 +91,11 @@ npm ERR!     /Users/.npm/_logs/2018-09-23T09_09_10_266Z-debug.log
 ```
 + mymytoolls@1.0.0
 ```
-10. 登录网站后点击package即可看到自己发布的npm包（项目的README.md的内容会自动显示在你的npm包说明里面）
+10. 登录网站后点击package即可看到自己发布的npm包（项目的README.md的内容会自动显示在你的npm包说明里面）
 11. 如要进行取消发布执行
-> 说明： 你一旦取消发布了之后重新打包
+> 说明： 你一旦取消发布了之后重新打包发布，会显示不成功，因为npm有个限制就是在24小时之内不得发布同样的名字
 ```
 npm unpublish 包@版本号
 ```
+12. 可能在发布之后想要更新项目的README.md，是不能直接在当前版本进行更新的，我们需要提升版本才能进行更新。具体参考以下网站
+https://docs.npmjs.com/getting-started/publishing-npm-packages
