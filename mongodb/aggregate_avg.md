@@ -5,22 +5,22 @@
 ```json
 {
     "_id" : "0",
-    "saturday" : Number(4),
+    "saturday" : 4,
     "sunday" : null
 }
 
 /* 2 */
 {
     "_id" : "0",
-    "saturday" : Number(2),
-    "sunday" : Number(3)
+    "saturday" : 2,
+    "sunday" : 3
 }
 
 /* 3 */
 {
     "_id" : "0",
     "saturday" : null,
-    "sunday" : Number(1)
+    "sunday" : 1
 }
 ...
 ...
