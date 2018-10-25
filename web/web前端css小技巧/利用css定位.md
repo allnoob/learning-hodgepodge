@@ -7,7 +7,7 @@
  margin:auto 0 //上下居中定位
  ```
 ```css
- margin:0 auto //左右居中定位
+ margin:0 auto //左右居中定位
  ```
 
 ## ```文字上下居中```
