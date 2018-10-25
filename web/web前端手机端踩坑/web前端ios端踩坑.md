@@ -1,5 +1,5 @@
-# web前端ios端踩坑
-## 1.ios手机audio不能自动触发
+# web前端ios端踩坑
+## 1.ios手机audio不能自动触发
 解决方案： 1.利用微信sdk解决此问题  
 引入微信sdk  
 ```js
