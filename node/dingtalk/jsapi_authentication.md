@@ -11,21 +11,21 @@
 
 > 企业应用开发中，jsapi_ticket是一个CorpSecret对应一个，所以在使用的时候需要将jsapi_ticket以CorpSecret为维度进行缓存下来（设置缓存过期时间2小时），并不需要每次都通过接口拉取。
 
-注意了，这里告诉我们要将jsapi_ticket拿取到了后要缓存起来，这个时候我们可以选择数据库或者本地等去选择存储这个ticket的key；还需要设置缓存时间，比方我获取的时候的时间戳存进数据库，然后每次取的时候通过数据库拿到时间戳，对比当前的时间戳，如果大于两个小时的毫秒时间戳则重新获取并存入数据库，否则直接从数据库里拿。
+注意了，这里告诉我们要将jsapi_ticket拿取到了后要缓存起来，这个时候我们可以选择数据库或者本地等去选择存储这个ticket的key；还需要设置缓存时间，比方我获取的时候的时间戳存进数据库，然后每次取的时候通过数据库拿到时间戳，对比当前的时间戳，如果大于两个小时的毫秒时间戳则重新获取并存入数据库，否则直接从数据库里拿。
 
 * 获取access_token
-和上面获取jsapi_ticket差不多，实现思想同理，只不过这个token呢，两个小时之内不管你怎么请求确实只会获得到同一个，但是我们可以避免请求就避免嘛。
+和上面获取jsapi_ticket差不多，实现思想同理，只不过这个token呢，两个小时之内不管你怎么请求确实只会获得到同一个，但是我们可以避免请求就避免嘛。
 
 ### 接口
 接口需要提供这么几个数据
 ```json
 {
-    "ticket": string, // 你懂的就是上面获取的那个ticket
-    "nonce": string, // 随机字符串
-    "agentId": string, // 应用标示ID
-    "timeStamp": number, // 时间戳
-    "corpId": string, // 企业ID
-    "signature": string // sign(ticket, nonceStr, timeStamp, url)
+    "ticket": "string", // 你懂的就是上面获取的那个ticket
+    "nonce": "string", // 随机字符串
+    "agentId": "string", // 应用标示ID
+    "timeStamp": "number", // 时间戳
+    "corpId": "string", // 企业ID
+    "signature": "string" // sign(ticket, nonceStr, timeStamp, url)
 }
 ```
 **重点是signature，这个需要字符串key/value拼接然后再进行加密**
