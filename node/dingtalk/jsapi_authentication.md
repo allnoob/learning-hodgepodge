@@ -20,16 +20,31 @@
 接口需要提供这么几个数据
 ```json
 {
-    "ticket": "string", // 你懂的就是上面获取的那个ticket
-    "nonce": "string", // 随机字符串
-    "agentId": "string", // 应用标示ID
-    "timeStamp": "number", // 时间戳
-    "corpId": "string", // 企业ID
-    "signature": "string" // sign(ticket, nonceStr, timeStamp, url)
+    "ticket": "string",
+    "nonce": "string",
+    "agentId": "string",
+    "timeStamp": "number",
+    "corpId": "string",
+    "signature": "string"
 }
 ```
+* ticket 你懂的就是上面获取的那个ticket
+* nonce 随机字符串
+* agentId 应用标示ID
+* timeStamp 时间戳
+* corpId 企业ID
+* signature sign(ticket, nonceStr, timeStamp, url)
 **重点是signature，这个需要字符串key/value拼接然后再进行加密**
 
+### 实现
+这里用到的npm库有
+```
+request-promise
+nestjs框架
+mongoose
+node-uuid
+crypto-js
+```
 现在让小弟记录一下代码大致的编写：
 ```ts
 client.ts
