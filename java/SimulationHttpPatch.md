@@ -40,7 +40,7 @@ private <T> void fill(T previousObject, Map<String, Object> payload) {
 
 private Object getValue(Class fieldClazz, Object value) {
     if (fieldClazz.isEnum()) {
-        return Enum.valueOf(fieldClazz, value.toString);
+        return Enum.valueOf(fieldClazz, value.toString());
     }
     return value;
 }
