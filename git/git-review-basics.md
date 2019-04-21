@@ -1,12 +1,10 @@
 # git-review-patch
 ### 说明
-***
 我们现有代码提交在gerrit上，因为目前每次都是本地进行修改并推送的，所以并不会察觉到一些问题；当如果在公司和家里使用不同的电脑，想对同一个gerrit代码提交进行修改的时候，
 就会发现处理起来比较麻烦，这个工具就是可以帮助我们简化这部分操作的；以及在紧急的时候，先手修改他人创建的待审核代码也是可以的。
 > 参考文档：https://gerrit-review.googlesource.com/Documentation/
 
 ### 安装
-***
 ##### Linux
 ```shell
 sudo apt-get install git-review
@@ -24,7 +22,6 @@ pip install --user git-review
 ```
 > 此处只列出简单的两个安装，具体的请查看 https://www.mediawiki.org/wiki/Gerrit/git-review#Installation
 ### 基本使用
-***
 ##### 对一个在gerrit上的待合并代码进行修改
 1. 每一次提交在url上都会有一个序列号，请记住这个序列号，比如这个url的序列号是3409：
 ```http://localhost:8080/#/c/project/+/3409/```<br/>
@@ -33,7 +30,8 @@ pip install --user git-review
 git review -d 3409
 ```
 你会发现，当前分支改变了，里面的内容也都是3409此次代码提交的更改
-3. 随便修改一个文件（比方，我在某个文件加上一行注释 // test git-review）
+
+3. 随便修改一个文件（比方，我在某个文件加上一行注释 // test git-review）<br/>
 4. 提交（请勿使用-m提交，会覆盖先前并重新生成Change-Id，使用文本编辑器修改，则可以保持先前Change-Id不变）
 ```shell
 git add [modify file]
